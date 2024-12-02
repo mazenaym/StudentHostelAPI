@@ -12,7 +12,7 @@ namespace StudentHostelAPI.Controllers
     {
         private readonly IStudentService _studentService;
 
-        public StudentController(StudentService studentService)
+        public StudentController(IStudentService studentService)
         {
             _studentService = studentService;
         }   // GET: api/students

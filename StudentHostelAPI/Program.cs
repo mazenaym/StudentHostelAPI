@@ -34,6 +34,9 @@ namespace StudentHostelAPI
             builder.Services.AddScoped<ICommentRepository, CommentRepository>();
             //service
             builder.Services.AddScoped<IStudentService,StudentService>();
+            builder.Services.AddScoped<IOwnerService,OwnerService>();
+            builder.Services.AddScoped<IApartmentService,ApartmentService>();
+            builder.Services.AddScoped<ICommentService,CommentService>();
 
             var app = builder.Build();
 
