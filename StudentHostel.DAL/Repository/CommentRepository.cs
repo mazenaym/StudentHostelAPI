@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudentHostel.DAL.Repository
 {
-    public class CommentRepository :ICommentRepository
+    public class CommentRepository : ICommentRepository
     {
         private readonly ApplicationDbContext _context;
         public CommentRepository(ApplicationDbContext context)
@@ -32,6 +32,10 @@ namespace StudentHostel.DAL.Repository
                 _context.comments.Remove(comment);
                 _context.SaveChanges();
             }
+        }
+        public Comment GetCommentById(int id)
+        {
+            return _context.comments.FirstOrDefault(o => o.Comment_ID == id);
         }
 
 

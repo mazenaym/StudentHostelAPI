@@ -6,5 +6,6 @@ namespace StudentHostel.DAL.Repository.IRepository
     {
         void AddComment(Comment comment);
         void DeleteComment(int id);
+        Comment GetCommentById(int id);
     }
 }

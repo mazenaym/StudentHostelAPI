@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentHostel.BLL.Service.IService;
 using StudentHostel.DAL.Entites;
 using StudentHostel.DAL.Repository.IRepository;
 using System;
@@ -23,6 +24,10 @@ namespace StudentHostel.BLL.Service
         public void DeleteComment(int id)
         {
             _commentRepository.DeleteComment(id);
+        }
+        public Comment GetCommentById(int id)
+        {
+            return _commentRepository.GetCommentById(id);
         }
     }
 }

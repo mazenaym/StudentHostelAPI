@@ -16,7 +16,7 @@ namespace StudentHostelAPI.Controllers
         {
             _studentService = studentService;
         }   // GET: api/students
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IActionResult GetAllStudents()
         {
             var students = _studentService.GetAllStudents();
@@ -45,7 +45,7 @@ namespace StudentHostelAPI.Controllers
             }
 
             _studentService.AddStudent(student);
-            return CreatedAtAction(nameof(GetStudentById), new { id = student.Student_Id }, student);
+            return Ok();
         }
 
         // PUT: api/students/{id}
